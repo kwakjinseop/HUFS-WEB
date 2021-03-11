@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'google.apps.GoogleConfig', # 대문자??
+    'google.apps.googleConfig', # 대문자??
 
     # allauth 
     'allauth', 

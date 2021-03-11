@@ -1,8 +1,8 @@
 from django.contrib import admin
-from google.models import Google
+from .models import GoogleLogin
 
 # Register your models here.
-@admin.register(Google)
+@admin.register(GoogleLogin)
 
-class Google_admin(admin.ModelAdmin):
+class GoogleAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'url')

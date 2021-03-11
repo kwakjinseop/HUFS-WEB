@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 
 
-class GoogleConfig(AppConfig):
+class googleConfig(AppConfig):
     name = 'google'
+    label = 'my.google'
