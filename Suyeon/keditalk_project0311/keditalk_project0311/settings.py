@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'google.apps.googleConfig', # 대문자
+    'google.apps.googleConfig', # 대문자 주의 
 
     # allauth 
     'allauth', 
@@ -78,6 +78,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # `allauth` needs this from django
+                # 아래는 페북 구현할 때 추가함 
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -146,3 +149,31 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1 
 
 LOGIN_REDIRECT_URL = '/'
+
+
+# Allauth-facebook
+# 페이스북 로그인은 아래 블로그 참고함. 페북 로그인 지우려면 이 아래 코드는 다 지우기 
+# https://ldgeao99.tistory.com/117
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile', 'user_friends'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'email',
+            'name',
+            'first_name',
+            'last_name',
+            'friends',
+            'verified',
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': lambda request: 'ko_KR',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v2.9',
+    }
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
