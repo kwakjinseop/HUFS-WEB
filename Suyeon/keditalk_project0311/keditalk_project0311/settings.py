@@ -42,15 +42,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'google.apps.googleConfig', # 대문자??
+    'google.apps.googleConfig', # 대문자
 
     # allauth 
     'allauth', 
     'allauth.account', 
     'allauth.socialaccount', 
     
-    # provider 구글, 페이스북, 카톡, 깃헙 
+    # provider 구글, 페이스북
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+
 ]
 
 MIDDLEWARE = [
