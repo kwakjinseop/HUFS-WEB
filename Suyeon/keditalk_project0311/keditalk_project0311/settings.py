@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'google.apps.googleConfig', # 대문자 주의 
+    'articles',
 
     # allauth 
     'allauth', 
@@ -70,7 +71,7 @@ ROOT_URLCONF = 'keditalk_project0311.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

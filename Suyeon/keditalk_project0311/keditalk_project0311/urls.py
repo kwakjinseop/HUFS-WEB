@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 import google.views #app이름.views 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', google.views.home, name = "home"), #app이름.views.home
     path('accounts/', include('allauth.urls')),
+    path('articles/', include('articles.urls')),
 ]
-
