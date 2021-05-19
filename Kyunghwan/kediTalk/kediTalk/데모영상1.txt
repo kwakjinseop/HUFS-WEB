@@ -1,0 +1,5 @@
+https://youtu.be/pibzv00ZR5Y
+// 로그인및회원가입 + 댓글작성 + 회원정보수정 + DB에서 회원정보 확인
+
+https://youtu.be/olowtquG6z4
+// 소셜로그인 구현
